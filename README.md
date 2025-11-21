@@ -31,6 +31,7 @@ Why Collaborative Filtering?
 
 ## Project Architecture
 
+```
 books_recommender/
 │
 ├── components/
@@ -65,6 +66,7 @@ books_recommender/
 ├── setup.py
 ├── requirements.txt
 └── .dockerignore
+```
 
 This structure follows best practices used in MLOps-based ML systems.
 
