@@ -1,6 +1,112 @@
 # End-to-End-Book-Recommender-System-Machine-Learning-Project-
+
 (Machine Learning • Collaborative Filtering • Streamlit • Docker • AWS EC2 • MLOps Pipeline)
 
+## Overview
+
+This is a fully production-ready End-to-End Book Recommendation System designed using Collaborative Filtering, built with a modular ML pipeline architecture, and deployed using Docker on an AWS EC2 instance.
+The project includes:
+
+- A complete config-driven MLOps pipeline
+- Stage-wise processing (ingestion → validation → transformation → model training)
+- KNN-based collaborative filtering recommender
+- Real-time Streamlit UI
+- Containerized deployment using Docker
+- Cloud hosting using AWS EC2
+
+This project demonstrates production-level ML Engineering and MLOps skills required for AI/ML Engineer, MLE, Data Scientist, and Generative AI Engineer roles.
+
+## Recommender System Technique (Used in This Project)
+
+Collaborative Filtering (Model-Based)
+
+This project uses cosine similarity + KNN to identify similar books based on user–item interactions.
+
+Why Collaborative Filtering?
+
+- Doesn't require book metadata (author, genre, etc.)
+- Learns patterns from user behavior
+- Best for E-Commerce apps where users rate/purchase books
+- Scales well with thousands of users & books
+
+## Project Architecture
+
+books_recommender/
+│
+├── components/
+│ ├── stage_00_data_ingestion.py
+│ ├── stage_01_data_validation.py
+│ ├── stage_02_data_transformation.py
+│ ├── stage_03_model_trainer.py
+│
+├── config/
+│ ├── configuration.py
+│ └── config.yaml
+│
+├── entity/
+│ ├── config_entity.py
+│
+├── constant/
+├── exception/
+│ └── exception_handler.py
+├── logger/
+│ └── log.py
+├── pipeline/
+│ └── training_pipeline.py
+│
+├── utils/
+│ └── util.py
+│
+├── app.py
+├── Dockerfile
+├── setup.py
+├── requirements.txt
+└── .dockerignore
+
+This structure follows best practices used in MLOps-based ML systems.
+
+## Tech Stack
+
+### Machine Learning
+
+- Collaborative Filtering
+- Cosine Similarity
+- KNN (k-Nearest Neighbors)
+- Pivot matrix transformation
+
+### Frameworks & Tools
+
+- Python
+- Streamlit
+- Scikit-learn
+- Pandas, NumPy, SciPy
+
+### MLOps & Engineering
+
+- YAML-based configuration
+- Modular components
+- Logging and Exception Handling
+- Docker
+- AWS EC2 (Ubuntu 22.04)
+
+## Features
+
+- End-to-End ML Pipeline
+- Automated data ingestion, validation & transformation
+- Cosine similarity-based recommendation engine
+- Real-time book recommendations
+- Dockerized application for production
+- Cloud deployment on AWS EC2
+- Scalable MLOps-friendly architecture
+- Streamlit interactive UI
+
+## How the Recommendation Works
+
+1. Generate a user–item interaction matrix using ratings
+2. Convert matrix into a pivot table with books as rows
+3. Apply K-Nearest Neighbors on this matrix
+4. For any input book → return top N similar books
+5. Streamlit app displays recommendations
 
 ## Workflow
 
@@ -12,9 +118,9 @@
 - main.py
 - app.py
 
-## How to run?
+## Local Development Setup?
 
-### Steps
+#### STEP 01 - Clone the Repository
 
 Clone the repository
 
@@ -26,36 +132,47 @@ https://github.com/entbappy/End-to-end-Book-Recommender-System-live
 
 ```bash
 conda create -n books python=3.7.10 -y
-```
-
-```bash
 conda activate books
 ```
 
-#### STEP 02 - Git Commandas
-
-```bash
-git add .
-```
-
-```bash
-git commit -m "readme update"
-```
-
-```bash
-git push origin main
-```
-
-#### STEP 03 - Install the requirements
+#### STEP 02 - Install Install Dependencies
 
 ```bash
 pip install -r requirements.txt
+```
+
+#### STEP 03 - Git Commandas
+
+```bash
+git add .
+git commit -m "readme update"
+git push origin main
 ```
 
 #### STEP - 04 - run
 
 ```bash
 streamlit run app.py
+```
+
+#### STEP - 05 Docker Setup (Local)
+
+##### Build Docker Image
+
+```bash
+docker build -t book-recommender .
+```
+
+##### Run Docker Container
+
+```bash
+docker run -d -p 8501:8501 book-recommender
+```
+
+##### Access Application
+
+```bash
+http://localhost:8501
 ```
 
 ## Deploy Streamlit App on AWS EC2 using Docker
