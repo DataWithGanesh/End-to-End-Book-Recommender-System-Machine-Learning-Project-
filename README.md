@@ -1,4 +1,6 @@
 # End-to-End-Book-Recommender-System-Machine-Learning-Project-
+(Machine Learning • Collaborative Filtering • Streamlit • Docker • AWS EC2 • MLOps Pipeline)
+
 
 ## Workflow
 
