@@ -1,5 +1,15 @@
 # End-to-End-Book-Recommender-System-Machine-Learning-Project-
 
+## Workflow
+
+- config.yaml
+- entity
+- config/configuration.py
+- components
+- pipeline
+- main.py
+- app.py
+
 ## How to run?
 
 ### Steps
