@@ -12,3 +12,13 @@ data_validation_config:
   serialized_objects_dir: serialized_objects
   books_csv_file: BX-Books.csv
   ratings_csv_file: BX-Book-Ratings.csv
+
+data_transformation_config:
+  transformed_data_dir: transformed_data
+
+model_trainer_config:
+  trained_model_dir: trained_model
+  trained_model_name: model.pkl
+
+recommendation_config:
+  poster_api_url: https://api.themovie.org/3/movie/{}?api_key={82f4f1f6d9c6e1f5d4c8e4f2e5b6c7d8e&language=en-US}

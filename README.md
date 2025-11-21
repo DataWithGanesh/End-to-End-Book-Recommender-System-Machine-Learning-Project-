@@ -49,3 +49,9 @@ git push origin main
 ```bash
 pip install -r requirements.txt
 ```
+
+#### STEP - 04 - run
+
+```bash
+streamlit run app.py
+```
