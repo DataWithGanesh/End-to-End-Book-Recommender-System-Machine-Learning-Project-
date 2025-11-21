@@ -37,20 +37,23 @@ books_recommender/
 │ ├── stage_00_data_ingestion.py
 │ ├── stage_01_data_validation.py
 │ ├── stage_02_data_transformation.py
-│ ├── stage_03_model_trainer.py
+│ └── stage_03_model_trainer.py
 │
 ├── config/
 │ ├── configuration.py
 │ └── config.yaml
 │
 ├── entity/
-│ ├── config_entity.py
+│ └── config_entity.py
 │
 ├── constant/
+│
 ├── exception/
 │ └── exception_handler.py
+│
 ├── logger/
 │ └── log.py
+│
 ├── pipeline/
 │ └── training_pipeline.py
 │
